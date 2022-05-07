@@ -214,4 +214,5 @@ cython_debug/
 ### pm-sandbox template
 
 pm-core/
+pm_core/
 #src/pm-core/
