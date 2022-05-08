@@ -1,15 +1,16 @@
 import os
 
 import interactions
-from pyfiglet import figlet_format
-from termcolor import cprint
-
 import src.utils.helper as h
-import src.pm_core.src.services.migration as _mg
 import src.pm_core.config.conf as _c  # core config
 import src.pm_core.src.utils.helper as _h
+import src.pm_core.src.services.migration as _mg
 
+from termcolor import cprint
 from dotenv import load_dotenv
+from pyfiglet import figlet_format
+
+from src.pm_core.src.services.logs import Log
 
 load_dotenv(".env")
 bot = interactions.Client(token=os.getenv("TOKEN_DEV"),
@@ -28,14 +29,27 @@ for filename in os.listdir("./src/cogs"):
 
 
 @bot.event
+async def on_guild_create(guild: interactions.Guild):
+    """
+    Event vykonaný při přidání bota na server, provede se i když se bot zapíná
+    :param guild: Discord server
+    """
+    cprint('==========================================================================', 'cyan')
+    _mg.apply_server_migrations(int(guild.id), guild.name)  # Todo: SERVER MIGRACE
+    print(f"on_guild_create - {guild.name}")
+    log = Log(int(guild.id))
+    log.info(f'Create new guild id: {guild.id}, name: {guild.name}')
+
+
+@bot.event
 async def on_ready():
     """
     Event vykonaný při zapnutí
     """
     h.print_info()
     cprint('===============================================================================', 'magenta')
-    cprint(figlet_format('MASTER  MIGRATION', font='small'), 'magenta')
     _mg.apply_master_migrations()
     print("on_ready")
+
 
 bot.start()
