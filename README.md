@@ -4,10 +4,10 @@
 **Tento kód není spustitelný bez `předchozí úpravy` a repositáře [pm-core](https://github.com/BSPIKD/pm-core)**
 
 Je potřeba aby bot běžel na verzi `python 3.8.6`, kterou
-stáhnete [zde](https://www.python.org/downloads/release/python-386/). 
+stáhnete [zde](https://www.python.org/downloads/release/python-386/).
 ---
 ## Instalace
-
+_Pokud máte jakékoliv problémy s rozběhnutím projektu můžete mě kontaktovat na discordu Dom-kun#0053_
 ### Klon repositáře
 
  šablonu použijete pomocí tlačítka, které je nahoře 
@@ -26,15 +26,24 @@ Pro správné fungování je potřeba mít nainstalovaný podpůrný projekt [pm
 
 **Instalace pm-core**
 
+------
+**!! POZOR !!**
+
+
+<br>Je potřeba mít pullnutou pm-core knihovnu v `<project>/src/`. 
+<br>Tuto knihovnu nenahrávejte do svého repositáře. Pouze ho naklonujte. Je přidán do [.gitignore](.gitignore),<br>
+takže se nebude no vašeho repositáře nahrávat.
+-----
+
 ```bash
 $ cd /path/to/project/src # $ cd /home/username/repos/pm-sandbox/src
 
 # Nejnovější stabilní verze: "master", 
-$ git clone https://github.com/BSPIKD/pm-core.git
+$ git clone https://github.com/BSPIKD/pm-core.git pm_core
 # Nejnovější nestabilní verze: "unstable", 
-$ git clone --branch unstable https://github.com/BSPIKD/pm-core.git
+$ git clone --branch unstable https://github.com/BSPIKD/pm-core.git pm_core
 # Konkrétní verze: "v1.0rc", 
-$ git clone --depth 1 --branch v1.0rc https://github.com/BSPIKD/pm-core.git
+$ git clone --depth 1 --branch v1.0rc https://github.com/BSPIKD/pm-core.git pm_core
 ```
 
 ### Aktualizace knihovny
@@ -46,7 +55,7 @@ $ cd /path/to/project/src/pm-core # $ cd /home/username/repos/pm-sandbox/src/pm-
 $ git pull
 ```
 
-Na jinou verzi
+Na jinou větev/verzi
 
 ```bash
 $ cd /path/to/project/src/pm-core # $ cd /home/username/repos/pm-sandbox/src/pm-core
