@@ -36,7 +36,7 @@ takže se nebude no vašeho repositáře nahrávat.
 -----
 
 ```bash
-$ cd /path/to/project/src # $ cd /home/username/repos/pm-sandbox/src
+$ cd /path/to/project # $ cd /home/username/repos/pm-sandbox/src
 
 # Nejnovější stabilní verze: "master", 
 $ git clone https://github.com/BSPIKD/pm-core.git pm_core
@@ -51,14 +51,14 @@ $ git clone --depth 1 --branch v1.0rc https://github.com/BSPIKD/pm-core.git pm_c
 Součastnou větev
 
 ```bash
-$ cd /path/to/project/src/pm-core # $ cd /home/username/repos/pm-sandbox/src/pm-core
+$ cd /path/to/project/pm_core # $ cd /home/username/repos/pm-sandbox/src/pm-core
 $ git pull
 ```
 
 Na jinou větev/verzi
 
 ```bash
-$ cd /path/to/project/src/pm-core # $ cd /home/username/repos/pm-sandbox/src/pm-core
+$ cd /path/to/project/pm_core # $ cd /home/username/repos/pm-sandbox/src/pm-core
 $ git fetch --all
 $ git reset --hard origin/unstable # /master, nebo specifický tag
 ```

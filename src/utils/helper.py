@@ -1,5 +1,5 @@
 import config.conf as c
-import src.pm_core.config.conf as _c
+import pm_core.config.conf as _c
 
 from termcolor import cprint
 from pyfiglet import figlet_format
