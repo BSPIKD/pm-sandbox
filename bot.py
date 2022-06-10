@@ -18,7 +18,7 @@ bot = interactions.Client(token=os.getenv("TOKEN_DEV"),
 # import pm-core cogs
 for filename in os.listdir("./pm_core/src/cogs"):
     if filename.endswith(".py"):
-        bot.load(f"src.pm_core.src.cogs.{filename[:-3]}")
+        bot.load(f"pm_core.src.cogs.{filename[:-3]}")
 
 # import pm- sandbox cogs
 for filename in os.listdir("./src/cogs"):
